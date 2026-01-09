@@ -59,7 +59,7 @@ export default function Crear() {
     }
 
     try {
-      await axios.post("http://localhost:3001/products", inputForm);
+      await axios.post("https://trucks-admin-production.up.railway.app/products", inputForm);
       toast.success("Producto creado correctamente");
       setInputForm(initialFormState);
     } catch (error) {

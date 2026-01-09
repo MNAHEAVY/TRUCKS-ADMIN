@@ -13,7 +13,7 @@ export default function BorrarSimple() {
 
   const fetchProducts = async () => {
     try {
-      const res = await fetch("http://localhost:3001/products");
+      const res = await fetch("https://trucks-admin-production.up.railway.app/products");
       const data = await res.json();
       setProductos(data);
     } catch {
@@ -30,7 +30,7 @@ export default function BorrarSimple() {
 
   const deleteProduct = async (id) => {
     try {
-      const res = await fetch(`http://localhost:3001/product/${id}`, {
+      const res = await fetch(`https://trucks-admin-production.up.railway.app/product/${id}`, {
         method: "DELETE"
       });
 

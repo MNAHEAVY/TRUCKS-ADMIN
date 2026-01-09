@@ -9,7 +9,7 @@ function Login({ onLogin }) {
     e.preventDefault();
 
     // Aquí puedes agregar la lógica de validación de usuario
-    if (username === "a" && password === "a") {
+    if (username === "super" && password === "trucks") {
       onLogin(true); // Si las credenciales son correctas, actualiza el estado de autenticación
     } else {
       setError("Usuario o contraseña incorrectos");
