@@ -1,0 +1,148 @@
+/* CartModal.css */
+.cart-modal {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  min-height: calc(100% + var(--inputs-margin-offset) + (2 * var(--inputs-border-width)));
+  height: 100%;
+  pointer-events: none;
+}
+
+.cart-modal.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cart-modal__content {
+  position: absolute;
+  color: rgb(14, 27, 77);
+  top: 0;
+  left: 65%;
+  right: 0;
+  bottom: 0;
+  width: 35%;
+  background: #eff0f5;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: calc(1 + 0.8 / var(--font-body-scale));
+}
+@media (max-width: 768px) {
+  .cart-modal__content {
+    left: 20%;
+    width: 80%;
+  }
+}
+
+.cart-modal__content-bottom {
+  bottom: calc((var(--inputs-margin-offset) / 2));
+  height: 100vh;
+}
+
+.cart-modal__form {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cart-modal__close-button {
+  position: absolute;
+  right: 0.3rem;
+  top: 0.3rem;
+}
+
+.modal__close-button.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem;
+  height: 4.4rem;
+  width: 4.4rem;
+  background-color: transparent;
+}
+
+.modal__close-button .icon {
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  display: none;
+}
+
+.cart-modal.visible .modal-overlay {
+  display: block;
+}
+
+.continue-shopping-button {
+  padding: 10px 20px;
+  background-color: #4770db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.cart-card {
+  background-color: #e9e9e9; /* Ajusta según tu diseño */
+  border: 1px solid #ddd; /* Ajusta según tu diseño */
+  border-radius: 8px;
+  padding: 5px;
+  text-align: center;
+  width: 100px; /* Ajusta el ancho de la tarjeta según el tamaño de la imagen */
+  transition: box-shadow 0.3s;
+}
+
+.cart-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-card a {
+  text-decoration: none;
+}
+
+.cart-image {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.cart-info {
+  text-align: center;
+}
+
+.cart-title {
+  margin: 0;
+  font-size: 12px;
+  color: #333;
+  font-weight: 100;
+}
+.remove-button {
+  background: rgba(238, 38, 38, 0.572);
+  border: none;
+  color: rgb(230, 223, 223);
+  cursor: pointer;
+  position: relative;
+  border-radius: 50%;
+  position: relative;
+  left: 30px;
+  top: -3px;
+}
+.cart-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 10px;
+}
